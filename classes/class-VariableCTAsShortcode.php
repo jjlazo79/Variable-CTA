@@ -69,9 +69,22 @@ class VariableCTAsShortcode
 
 		echo $a['version'] . '<br>';
 		echo $a['avatar'] . '<br>';
-		echo '<div class="wrap"><img src="' . $thumbnail_url[0] . '"></div>';
 		echo $a['phone'] . '<br>';
 		echo $a['color'] . '<br>';
+?>
+		<div class="pure-g">
+			<div class="pure-u-1-3">
+				<p>Thirds</p>
+			</div>
+			<div class="pure-u-1-3">
+				<div class="wrap"><img class="pure-img" src="<?php echo $thumbnail_url[0] ?>"></div>
+				<p>Thirds</p>
+			</div>
+			<div class="pure-u-1-3">
+				<p>Thirds</p>
+			</div>
+		</div>
+<?php
 
 		$output = ob_get_clean();
 
@@ -80,14 +93,13 @@ class VariableCTAsShortcode
 
 
 	/**
-		* Enqueue front scripts
-		*
-		* @return void
-		*/
+	 * Enqueue front scripts
+	 *
+	 * @return void
+	 */
 	public static function vc_enqueue_front_scripts()
 	{
-		wp_enqueue_style('vc-shortcode-styles', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/shortcode.css");
-		// wp_enqueue_style('vc-shortcode-fontawesome', 'https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
-		wp_enqueue_script('vc-shortcode-script', VARIABLECTAS_PLUGIN_DIR_URL . "assets/js/shortcode.js");
+		wp_enqueue_style('vc-shortcode', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/shortcode.css", array(), VARIABLECTAS_VERSION);
+		wp_enqueue_style('vc-pure', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/pure.min.css", array(), VARIABLECTAS_VERSION);
 	}
 }
