@@ -1,0 +1,22 @@
+{
+  "name": "variable-ctas",
+  "version": "1.0.0",
+  "description": "=== Variable CTAs === Contributors: (this should be a list of wordpress.org userid's) Donate link: https://example.com/ Tags: comments, spam Requires at least: 4.5 Tested up to: 5.7.2 Stable tag: 0.1.0 License: GPLv2 or later License URI: https://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjlazo79/Variable-CTA.git"
+  },
+  "author": "jjlazo79",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jjlazo79/Variable-CTA/issues"
+  },
+  "homepage": "https://github.com/jjlazo79/Variable-CTA#readme",
+  "dependencies": {
+    "mini.css": "^3.0.1"
+  }
+}
