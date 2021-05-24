@@ -48,43 +48,38 @@ class VariableCTAsShortcode
 	{
 		// Only in shortcode page insert
 		VariableCTAsShortcode::vc_enqueue_front_scripts();
-		$options         = get_option('vc_general_options');
-		$default_version = ($options['vc_version']) ? $options['vc_version'] : 1;
-		$default_avatar  = ($options['vc_avatar']) ? $options['vc_avatar'] : '';
-		$default_phone   = ($options['vc_phone']) ? $options['vc_phone'] : '932 828 064';
-		$default_color   = ($options['vc_color']) ? $options['vc_color'] : '#942192';
+		// Get default values if set
+		$options            = get_option('vc_general_options');
+		$default_version    = ($options['vc_version']) ? $options['vc_version'] : 1;
+		$default_avatar     = ($options['vc_avatar']) ? $options['vc_avatar'] : '';
+		$default_background = ($options['vc_background']) ? $options['vc_background'] :  VARIABLECTAS_PLUGIN_DIR_URL . 'assets/img/background.png';
+		$default_phone      = ($options['vc_phone']) ? $options['vc_phone'] : '932 828 064';
+		$default_color      = ($options['vc_color']) ? $options['vc_color'] : '#942192';
 
 		$a = shortcode_atts(array(
-			'version' => $default_version,
-			'avatar'  => $default_avatar,
-			'phone'   => $default_phone,
-			'color'   => $default_color
+			'version'    => $default_version,
+			'avatar'     => $default_avatar,
+			'background' => $default_background,
+			'phone'      => $default_phone,
+			'color'      => $default_color
 		), $atts);
 
-		$image_id      = attachment_url_to_postid($a['avatar']);
-		$thumbnail_url = wp_get_attachment_image_src($image_id, 'medium');
 
+		if ($a['version'] == 1 && empty($options['vc_background'])) {
+			$a['background'] = VARIABLECTAS_PLUGIN_DIR_URL . 'assets/img/background-1.png';
+		}
 
 		ob_start();
 
-		echo $a['version'] . '<br>';
-		echo $a['avatar'] . '<br>';
-		echo $a['phone'] . '<br>';
-		echo $a['color'] . '<br>';
-?>
-		<div class="pure-g">
-			<div class="pure-u-1-3">
-				<p>Thirds</p>
-			</div>
-			<div class="pure-u-1-3">
-				<div class="wrap"><img class="pure-img" src="<?php echo $thumbnail_url[0] ?>"></div>
-				<p>Thirds</p>
-			</div>
-			<div class="pure-u-1-3">
-				<p>Thirds</p>
-			</div>
-		</div>
-<?php
+		echo 'Versión: '. $a['version'] . '<br>';
+		echo 'Avatar: ' . $a['avatar'] . '<br>';
+		echo 'Background: ' . $a['background'] . '<br>';
+		echo 'Phone: ' . $a['phone'] . '<br>';
+		echo 'Color: ' . $a['color'] . '<br>';
+
+		include_once (VARIABLECTAS_PLUGIN_DIR_PATH.'templates/cta-version-'.$a['version'].'.php');
+
+		echo '<hr>';
 
 		$output = ob_get_clean();
 
@@ -101,5 +96,7 @@ class VariableCTAsShortcode
 	{
 		wp_enqueue_style('vc-shortcode', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/shortcode.css", array(), VARIABLECTAS_VERSION);
 		wp_enqueue_style('vc-pure', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/pure.min.css", array(), VARIABLECTAS_VERSION);
+		wp_enqueue_style('vc-pure-grids', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/grids-responsive.min.css", array('vc-pure'), VARIABLECTAS_VERSION);
+
 	}
 }
