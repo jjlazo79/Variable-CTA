@@ -1,0 +1,145 @@
+.pure-round {
+	border-radius: 10px;
+}
+.pure-rounded {
+	border-radius: 100%;
+}
+
+.pure-text-justify {
+	text-align: justify !important
+}
+
+.pure-text-wrap {
+	white-space: normal !important
+}
+
+.pure-text-nowrap {
+	white-space: nowrap !important
+}
+
+.pure-text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.pure-text-left {
+	text-align: left !important
+}
+
+.pure-text-right {
+	text-align: right !important
+}
+
+.pure-text-center {
+	text-align: center !important
+}
+
+.pure-text-white {
+	color: #fff !important
+}
+
+.pure-text-lowercase {
+	text-transform: lowercase !important
+}
+
+.pure-text-uppercase {
+	text-transform: uppercase !important
+}
+
+.pure-text-bolder {
+	font-weight: bolder !important
+}
+
+.pure-text-hide {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0
+}
+
+.pure-text-decoration-none {
+	text-decoration: none !important
+}
+
+.pure-text-break {
+	word-break: break-word !important;
+	overflow-wrap: break-word !important
+}
+
+.pure-text-reset {
+	color: inherit !important
+}
+
+.visible {
+	visibility: visible !important
+}
+
+.invisible {
+	visibility: hidden !important
+}
+
+.pure-small {
+	font-size: 70%
+}
+
+ul.checklist {
+	list-style: none;
+	padding-left: 7px;
+}
+
+ul.checklist li::before {
+	content: url('../img/check.svg');
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 7px;
+}
+
+.mxw-540 {
+	max-width: 540px;
+}
+
+.bg-center {
+background-position: center center;
+}
+.bg-cover {
+background-size: cover;
+}
+
+.bg-white {
+	background-color: #fff;
+}
+
+.bg-padding {
+	padding: 2rem 2rem 0;
+}
+
+.pure-card {
+	background: #FFFFFFBF 0% 0% no-repeat padding-box;
+	border-radius: 10px;
+	padding: 15px;
+}
+
+div:not(.version-1) > div > .pure-card {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.pure-card--margin-10-3-4 {
+	margin: 10rem 3rem 4rem;
+}
+
+.pure-button.pure-button--secondary,
+.pure-button.pure-button--selected {
+	color: #fff;
+	font-size: 1.5rem;
+	background: #942092 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 6px #00000091;
+	border-radius: 8px;
+	margin-bottom: 15px;
+}
+
+.pure-text-accent-color {
+	color: #942092;
+}
