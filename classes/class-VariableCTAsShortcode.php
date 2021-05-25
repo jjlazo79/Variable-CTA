@@ -34,6 +34,10 @@ class VariableCTAsShortcode
 	 */
 	private function __construct()
 	{
+		// Add action
+		add_action('wp_head',
+			array($this, 'vc_data_layer')
+		);
 		// Add shortcode
 		add_shortcode(
 			'variable_cta',
@@ -51,10 +55,10 @@ class VariableCTAsShortcode
 		// Get default values if set
 		$options            = get_option('vc_general_options');
 		$default_version    = ($options['vc_version']) ? $options['vc_version'] : 1;
-		$default_avatar     = ($options['vc_avatar']) ? $options['vc_avatar'] : '';
+		$default_avatar     = ($options['vc_avatar']) ? $options['vc_avatar'] : VARIABLECTAS_PLUGIN_DIR_URL . 'assets/img/avatar.png';
 		$default_background = ($options['vc_background']) ? $options['vc_background'] :  VARIABLECTAS_PLUGIN_DIR_URL . 'assets/img/background.png';
 		$default_phone      = ($options['vc_phone']) ? $options['vc_phone'] : '932 828 064';
-		$default_color      = ($options['vc_color']) ? $options['vc_color'] : '#942192';
+		$default_color      = ($options['vc_color']) ? $options['vc_color'] : '#942092';
 
 		$a = shortcode_atts(array(
 			'version'    => $default_version,
@@ -77,7 +81,24 @@ class VariableCTAsShortcode
 		echo 'Phone: ' . $a['phone'] . '<br>';
 		echo 'Color: ' . $a['color'] . '<br>';
 
-		include_once (VARIABLECTAS_PLUGIN_DIR_PATH.'templates/cta-version-'.$a['version'].'.php');
+		echo '<section class="variable-cta">';
+
+			include (VARIABLECTAS_PLUGIN_DIR_PATH.'templates/cta-version-'.$a['version'].'.php');
+
+			echo '<style>
+				.variable-cta * {
+					font-family: "Helvetica Neue";
+				}
+				#version-' . $a['version'] . ' .pure-text-accent-color {
+					color: ' . $a['color'] . ';
+				}
+
+				#version-' . $a['version'] . ' .pure-button.pure-button--secondary,
+				#version-' . $a['version'] . ' .pure-button.pure-button--selected {
+					background-color: ' . $a['color'] . ';
+				}
+			</style>';
+		echo '</section>';
 
 		echo '<hr>';
 
@@ -86,7 +107,6 @@ class VariableCTAsShortcode
 		return $output;
 	}
 
-
 	/**
 	 * Enqueue front scripts
 	 *
@@ -94,9 +114,20 @@ class VariableCTAsShortcode
 	 */
 	public static function vc_enqueue_front_scripts()
 	{
-		wp_enqueue_style('vc-shortcode', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/shortcode.css", array(), VARIABLECTAS_VERSION);
+		wp_enqueue_style('vc-font', "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap", array(), VARIABLECTAS_VERSION);
 		wp_enqueue_style('vc-pure', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/pure.min.css", array(), VARIABLECTAS_VERSION);
 		wp_enqueue_style('vc-pure-grids', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/grids-responsive.min.css", array('vc-pure'), VARIABLECTAS_VERSION);
+		wp_enqueue_style('vc-shortcode', VARIABLECTAS_PLUGIN_DIR_URL . "assets/css/shortcode.css", array(), VARIABLECTAS_VERSION);
 
+	}
+
+	/**
+	 * Add DataLayer script to head
+	 *
+	 * @return void
+	 */
+	public static function vc_data_layer()
+	{
+		echo '<script>dataLayer=[];</script>';
 	}
 }
