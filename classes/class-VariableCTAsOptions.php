@@ -199,7 +199,7 @@ class VariableCTAsOptions
 	 */
 	public function vc_shortcode_section_info()
 	{
-		_e('The shortcode acepts six parameters:', VARIABLECTAS_TEXT_DOMAIN);
+		_e('The shortcode acepts five parameters:', VARIABLECTAS_TEXT_DOMAIN);
 		echo '<ol>';
 		printf(
 			'<li><b>version</b>: %s</li>',
@@ -210,6 +210,10 @@ class VariableCTAsOptions
 			__('This value is the picture to show. Default in options or none', VARIABLECTAS_TEXT_DOMAIN)
 		);
 		printf(
+			'<li><b>background</b>: %s</li>',
+			__('This value is the picture to show like background <b>in all version except version-1</b>. Default in options or none', VARIABLECTAS_TEXT_DOMAIN)
+		);
+		printf(
 			'<li><b>phone</b>: %s</li>',
 			__('This value is the phone number to show and ofuscated link. Default in options or 932 828 064', VARIABLECTAS_TEXT_DOMAIN)
 		);
@@ -218,8 +222,8 @@ class VariableCTAsOptions
 			__('This\'s a valid CSS color value to handle colors details. Default in options or #942192', VARIABLECTAS_TEXT_DOMAIN)
 		);
 		echo '</ol>';
-		_e("The use is pretty simple. You only have to put <b>[variable_cta version='2' avatar='' phone='555636363' color='#942192']</b> where you want to show the CTA.", VARIABLECTAS_TEXT_DOMAIN);
-		echo '<br>';
+		echo '<p>' . __("The use is pretty simple. You only have to put <b>[variable_cta version='2' avatar='https://domain.es/image.png' background='https://domain.es/image.png' phone='555636363' color='#942192']</b> where you want to show the CTA.", VARIABLECTAS_TEXT_DOMAIN). '</p>';
+		echo '<p>' . __("If you only want to show default values you have to put <b>[variable_cta]</b> where you want to show the CTA.", VARIABLECTAS_TEXT_DOMAIN) . '</p>';
 		_e('<b>Note the singles quotes</b>. This is because WordPress change automatically double quotes to angular ones (« ») in spanish language.​', VARIABLECTAS_TEXT_DOMAIN);
 	}
 
