@@ -1,20 +1,18 @@
+body.page-template-default {
+	background-image: url('http://develop.joselazo.es/wp-content/uploads/2021/05/bg-2.jpg');
+	background-repeat: repeat;
+	background-size: auto;
+}
+
+.variable-cta * {
+	font-family: 'Roboto';
+}
 .pure-round {
 	border-radius: 10px;
 }
 .pure-rounded {
 	border-radius: 100%;
-}
-
-.pure-text-justify {
-	text-align: justify !important
-}
-
-.pure-text-wrap {
-	white-space: normal !important
-}
-
-.pure-text-nowrap {
-	white-space: nowrap !important
+	margin: 5px auto;
 }
 
 .pure-text-truncate {
@@ -51,25 +49,9 @@
 	font-weight: bolder !important
 }
 
-.pure-text-hide {
-	font: 0/0 a;
-	color: transparent;
-	text-shadow: none;
-	background-color: transparent;
-	border: 0
-}
-
-.pure-text-decoration-none {
-	text-decoration: none !important
-}
-
 .pure-text-break {
 	word-break: break-word !important;
 	overflow-wrap: break-word !important
-}
-
-.pure-text-reset {
-	color: inherit !important
 }
 
 .visible {
@@ -96,8 +78,12 @@ ul.checklist li::before {
 	padding-right: 7px;
 }
 
-.mxw-540 {
-	max-width: 540px;
+.mxw-250 {
+	max-width: 250px;
+}
+
+.pure-center {
+	justify-content: center;
 }
 
 .bg-center {
