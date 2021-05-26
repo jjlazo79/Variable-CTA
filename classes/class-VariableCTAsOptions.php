@@ -107,6 +107,14 @@ class VariableCTAsOptions
 		);
 
 		add_settings_field(
+			'vc_background', // id
+			__('Default Background', VARIABLECTAS_TEXT_DOMAIN), // title
+			array($this, 'vc_background_callback'), // callback
+			'vc-general-options-admin', // page
+			'vc_header_setting_section' // section
+		);
+
+		add_settings_field(
 			'vc_phone', // id
 			__('Default phone number', VARIABLECTAS_TEXT_DOMAIN), // title
 			array($this, 'vc_phone_callback'), // callback
@@ -133,8 +141,14 @@ class VariableCTAsOptions
 	public function vc_sanitize($input)
 	{
 		$sanitary_values = array();
+		if (isset($input['vc_version'])) {
+			$sanitary_values['vc_version'] = sanitize_text_field($input['vc_version']);
+		}
 		if (isset($input['vc_avatar'])) {
 			$sanitary_values['vc_avatar'] = sanitize_text_field($input['vc_avatar']);
+		}
+		if (isset($input['vc_background'])) {
+			$sanitary_values['vc_background'] = sanitize_text_field($input['vc_background']);
 		}
 		if (isset($input['vc_phone'])) {
 			$sanitary_values['vc_phone'] = sanitize_text_field($input['vc_phone']);
@@ -166,11 +180,30 @@ class VariableCTAsOptions
 			isset($this->vc_options['vc_avatar']) ? esc_attr($this->vc_options['vc_avatar']) : ''
 		);
 		printf(
-			'<input id="upload_image_button" type="button" class="button-primary" value="%s" />',
-			__('Insert image', VARIABLECTAS_TEXT_DOMAIN)
+			'<input id="upload_avatar_button" type="button" class="upload_image_button button-primary" value="%s" />',
+			__('Insert image avatar', VARIABLECTAS_TEXT_DOMAIN)
 		);
+		echo '<div class="thumbnail-preview-vc_avatar" style="background-size: contain;width: 250px;margin: 15px 0;"></div>';
 		if (isset($this->vc_options['vc_avatar'])) {
 			$image_id      = attachment_url_to_postid($this->vc_options['vc_avatar']);
+			$thumbnail_url = wp_get_attachment_image_src($image_id, 'medium');
+			echo '<div class="wrap"><img src="' . $thumbnail_url[0] . '"></div>';
+		}
+	}
+
+	public function vc_background_callback()
+	{
+		printf(
+			'<input type="text" name="vc_general_options[vc_background]" id="vc_background" value="%s" />',
+			isset($this->vc_options['vc_background']) ? esc_attr($this->vc_options['vc_background']) : ''
+		);
+		printf(
+			'<input id="upload_background_button" type="button" class="upload_image_button button-primary" value="%s" />',
+			__('Insert image background', VARIABLECTAS_TEXT_DOMAIN)
+		);
+		echo '<div class="thumbnail-preview-vc_background" style="background-size: contain;width: 250px;margin: 15px 0;"></div>';
+		if (isset($this->vc_options['vc_background'])) {
+			$image_id      = attachment_url_to_postid($this->vc_options['vc_background']);
 			$thumbnail_url = wp_get_attachment_image_src($image_id, 'medium');
 			echo '<div class="wrap"><img src="' . $thumbnail_url[0] . '"></div>';
 		}
@@ -236,7 +269,7 @@ class VariableCTAsOptions
 	public function vc_media_uploader_enqueue()
 	{
 		wp_enqueue_media();
-		wp_register_script('vc-media-uploader', VARIABLECTAS_PLUGIN_DIR_URL . 'assets/js/media-uploader.js', array('jquery'));
+		wp_register_script('vc-media-uploader', VARIABLECTAS_PLUGIN_DIR_URL . 'assets/js/media-uploader.js', array('jquery'), '21');
 		wp_enqueue_script('vc-media-uploader');
 		wp_enqueue_style('wp-color-picker');
 		wp_enqueue_script('wp-color-picker');

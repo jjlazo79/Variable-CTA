@@ -1,25 +1,39 @@
-jQuery(document).ready(function($){
-	var mediaUploader;
-	$('#upload_image_button').click(function(e) {
+jQuery(document).ready(function ($) {
+	var custom_uploader;
+	var target_input;
+
+	$('.upload_image_button').click(function (e) {//the button class
+		//grab the ID of the input field prior to the button where we want the url value stored
+		target_input = $(this).prev().attr('id');
+
 		e.preventDefault();
-		if (mediaUploader) {
-			mediaUploader.open();
+
+		//If the uploader object has already been created, reopen the dialog
+		if (custom_uploader) {
+			custom_uploader.open();
 			return;
 		}
-		mediaUploader = wp.media.frames.file_frame = wp.media({
-			title: 'Choose Image',
+
+		//Extend the wp.media object
+		custom_uploader = wp.media.frames.file_frame = wp.media({
+			title: 'Choose Image ' + target_input,
 			button: {
-				text: 'Choose Image'
+				text: 'Choose Image ' + target_input
 			},
 			multiple: false
 		});
-		mediaUploader.on('select', function() {
-			var attachment = mediaUploader.state().get('selection').first().toJSON();
-			$('#vc_avatar').val(attachment.url);
-		});
-		mediaUploader.open();
-	});
 
-	// Add Color Picker to all inputs that have 'color-field' class
-	// $( '.vc-color-picker' ).wpColorPicker();
+		//When a file is selected, grab the URL and set it as the text field's value
+		custom_uploader.on('select', function () {
+			attachment = custom_uploader.state().get('selection').first().toJSON();
+
+			//Added target_input variable to grab ID
+			$('#' + target_input).val(attachment.url);
+			$('.thumbnail-preview-' + target_input).css('background-image', 'url(' + attachment.url + ')');
+			$('.thumbnail-preview-' + target_input).css('height','250px');
+		});
+
+		//Open the uploader dialog
+		custom_uploader.open();
+	});
 });

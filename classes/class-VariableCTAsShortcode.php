@@ -75,11 +75,11 @@ class VariableCTAsShortcode
 
 		ob_start();
 
-		echo 'Versión: '. $a['version'] . '<br>';
-		echo 'Avatar: ' . $a['avatar'] . '<br>';
-		echo 'Background: ' . $a['background'] . '<br>';
-		echo 'Phone: ' . $a['phone'] . '<br>';
-		echo 'Color: ' . $a['color'] . '<br>';
+		// echo 'Versión: '. $a['version'] . '<br>';
+		// echo 'Avatar: ' . $a['avatar'] . '<br>';
+		// echo 'Background: ' . $a['background'] . '<br>';
+		// echo 'Phone: ' . $a['phone'] . '<br>';
+		// echo 'Color: ' . $a['color'] . '<br>';
 
 		echo '<section class="variable-cta">';
 
@@ -100,7 +100,7 @@ class VariableCTAsShortcode
 			</style>';
 		echo '</section>';
 
-		echo '<hr>';
+		// echo '<hr>';
 
 		$output = ob_get_clean();
 
