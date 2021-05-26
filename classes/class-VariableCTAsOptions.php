@@ -187,7 +187,7 @@ class VariableCTAsOptions
 		if (isset($this->vc_options['vc_avatar'])) {
 			$image_id      = attachment_url_to_postid($this->vc_options['vc_avatar']);
 			$thumbnail_url = wp_get_attachment_image_src($image_id, 'medium');
-			echo '<div class="wrap"><img src="' . $thumbnail_url[0] . '"></div>';
+			echo '<div class="wrap"><img class="save_img_vc_avatar" src="' . $thumbnail_url[0] . '"></div>';
 		}
 	}
 
@@ -205,7 +205,7 @@ class VariableCTAsOptions
 		if (isset($this->vc_options['vc_background'])) {
 			$image_id      = attachment_url_to_postid($this->vc_options['vc_background']);
 			$thumbnail_url = wp_get_attachment_image_src($image_id, 'medium');
-			echo '<div class="wrap"><img src="' . $thumbnail_url[0] . '"></div>';
+			echo '<div class="wrap"><img class="save_img_vc_background" src="' . $thumbnail_url[0] . '"></div>';
 		}
 	}
 
@@ -263,13 +263,13 @@ class VariableCTAsOptions
 
 	/**
 	 * Enqueue scripts in admin
-	 *
+	 *s
 	 * @return void
 	 */
 	public function vc_media_uploader_enqueue()
 	{
 		wp_enqueue_media();
-		wp_register_script('vc-media-uploader', VARIABLECTAS_PLUGIN_DIR_URL . 'assets/js/media-uploader.js', array('jquery'), '21');
+		wp_register_script('vc-media-uploader', VARIABLECTAS_PLUGIN_DIR_URL . 'assets/js/media-uploader.js', array('jquery'), VARIABLECTAS_VERSION);
 		wp_enqueue_script('vc-media-uploader');
 		wp_enqueue_style('wp-color-picker');
 		wp_enqueue_script('wp-color-picker');

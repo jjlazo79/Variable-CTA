@@ -30,7 +30,8 @@ jQuery(document).ready(function ($) {
 			//Added target_input variable to grab ID
 			$('#' + target_input).val(attachment.url);
 			$('.thumbnail-preview-' + target_input).css('background-image', 'url(' + attachment.url + ')');
-			$('.thumbnail-preview-' + target_input).css('height','250px');
+			$('.thumbnail-preview-' + target_input).css('height', '250px');
+			$('.save_img_' + target_input).remove();
 		});
 
 		//Open the uploader dialog
