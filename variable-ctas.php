@@ -18,7 +18,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       variable-ctas
  * Domain Path:       /languages
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 5.2
  * Requires PHP:      7.0
  */
@@ -33,7 +33,7 @@ define('VARIABLECTAS_PLUGIN_DIR_URL', plugin_dir_url(__FILE__));
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
  */
-define('VARIABLECTAS_VERSION', '1.0.2');
+define('VARIABLECTAS_VERSION', '1.0.3');
 /**
  * Plugin text domain to localize.
  */
