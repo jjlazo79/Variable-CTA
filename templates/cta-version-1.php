@@ -14,13 +14,13 @@ declare(strict_types=1);
 
 ?>
 <div id="version-<?php echo $a['version']; ?>" class="version-<?php echo $a['version']; ?> pure-g pure-text-center">
-	<div class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-3"></div>
-	<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 bg-center bg-cover" style="background-image: url(<?php echo $a['background']; ?>);">
+	<div class="pure-u-1 pure-u-md-1-4 pure-u-lg-7-24 pure-u-xl-1-3"></div>
+	<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-10-24 pure-u-xl-1-3 bg-center bg-cover" style="background-image: url(<?php echo $a['background']; ?>);">
 		<div class="pure-card pure-card--margin-10-3-4">
-			<h2 class="pure-text-accent-color pure-text-uppercase pure-text-bolder">30 minutos</h2>
-			<p class="pure-text-bolder">Videncia sin gabinete</p>
-			<h2 class="pure-text-accent-color pure-text-uppercase pure-text-bolder">Por solo 30€</h2>
-			<p class="pure-text-bolder">Particular <span class="pure-text-accent-color">|</span> 98% acierto</p>
+			<h2 class="pure-text-18 pure-text-accent-color pure-text-uppercase pure-text-bolder">30 minutos</h2>
+			<h5 class="pure-text-12 pure-text-bolder pure-text-uppercase">Videncia sin gabinete</h5>
+			<h2 class="pure-text-18 pure-text-accent-color pure-text-uppercase pure-text-bolder">Por solo 30€</h2>
+			<h5 class="pure-text-12 pure-text-bolder pure-spacer">Particular <span class="pure-text-accent-color">|</span> 98% acierto</h5>
 			<div>
 				<button class="pure-button pure-button--secondary round" onclick="dataLayer.push({
 						event: 'event',
@@ -38,5 +38,5 @@ declare(strict_types=1);
 			</p>
 		</div>
 	</div>
-	<div class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-3"></div>
+	<div class="pure-u-1 pure-u-md-1-4 pure-u-lg-7-24 pure-u-xl-1-3"></div>
 </div>
