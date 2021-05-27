@@ -34,7 +34,7 @@ declare(strict_types=1);
 						'eventBackground': '<?php echo $a['background']; ?>',
 						'eventPhone': '<?php echo $a['phone']; ?>',
 						'eventColor': '<?php echo $a['color']; ?>'
-					 });
+					});
 					window.location.assign('tel:<?php echo $a['phone']; ?>');
 					return false;">
 					<?php echo $a['phone']; ?>
