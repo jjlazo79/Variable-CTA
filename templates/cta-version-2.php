@@ -26,10 +26,14 @@ declare(strict_types=1);
 		<div class="bg-transparent">
 			<div class="pure-button-advisory">
 				<button class="pure-button pure-button--secondary round" onclick="dataLayer.push({
-						event: 'event',
-						eventCat: 'interaction',
-						eventAct: 'call',
-						eventLbl: 'call-version-<?php echo $a['version']; ?>'
+						'event': 'variableCTAs',
+						'eventCat': 'interaction',
+						'eventAct': 'call',
+						'eventVersion': 'call-version-<?php echo $a['version']; ?>',
+						'eventAvatar': '<?php echo $a['avatar']; ?>',
+						'eventBackground': '<?php echo $a['background']; ?>',
+						'eventPhone': '<?php echo $a['phone']; ?>',
+						'eventColor': '<?php echo $a['color']; ?>'
 					 });
 					window.location.assign('tel:<?php echo $a['phone']; ?>');
 					return false;">
