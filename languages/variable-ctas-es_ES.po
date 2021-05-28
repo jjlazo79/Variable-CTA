@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Variables CTAs\n"
+"POT-Creation-Date: 2021-05-28 11:06+0200\n"
+"PO-Revision-Date: 2021-05-28 11:11+0200\n"
+"Language-Team: jjlazo79@gmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;"
+"esc_html__;esc_html_e;esc_html_x;_n_noop;_nx_noop;translate_nooped_plural\n"
+"Last-Translator: Jose Lazo <jjlazo79@gmail.com>\n"
+"Language: en\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/class-VariableCTAsOptions.php:49
+#: classes/class-VariableCTAsOptions.php:50
+#: classes/class-VariableCTAsOptions.php:64
+msgid "Variable CTAs Options"
+msgstr "Opciones de CTA variables"
+
+#: classes/class-VariableCTAsOptions.php:65
+msgid "Setup defaults values to the Call To Actions"
+msgstr "Configurar valores predeterminados para la llamada a acciones"
+
+#: classes/class-VariableCTAsOptions.php:88
+msgid "<hr>General settings"
+msgstr "<hr>Configuración general"
+
+#: classes/class-VariableCTAsOptions.php:95
+msgid "Default Version"
+msgstr "Versión predeterminada"
+
+#: classes/class-VariableCTAsOptions.php:103
+msgid "Default Avatar"
+msgstr "Avatar predeterminado"
+
+#: classes/class-VariableCTAsOptions.php:111
+msgid "Default Background"
+msgstr "Fondo predeterminado"
+
+#: classes/class-VariableCTAsOptions.php:119
+msgid "Default phone number"
+msgstr "Número de teléfono predeterminado"
+
+#: classes/class-VariableCTAsOptions.php:127
+msgid "Default color"
+msgstr "Color predeterminado"
+
+#: classes/class-VariableCTAsOptions.php:135
+msgid "<hr>Shortcodes documentation"
+msgstr "<hr>Documentación de shortcodes"
+
+#: classes/class-VariableCTAsOptions.php:165
+msgid "Setup the general options"
+msgstr "Configurar las opciones generales"
+
+#: classes/class-VariableCTAsOptions.php:184
+msgid "Insert image avatar"
+msgstr "Insertar avatar de imagen"
+
+#: classes/class-VariableCTAsOptions.php:202
+msgid "Insert image background"
+msgstr "Insertar imagen de fondo"
+
+#: classes/class-VariableCTAsOptions.php:235
+msgid "The shortcode acepts five parameters:"
+msgstr "El shortcode acepta cinco parámetros:"
+
+#: classes/class-VariableCTAsOptions.php:239
+msgid ""
+"This value handle the version of CTA to show it. Values between 1 to 6. "
+"Default in options or 1"
+msgstr ""
+"Este valor maneja la versión de CTA para mostrarlo. Valores entre 1 y 6. "
+"Predeterminado en opciones o 1"
+
+#: classes/class-VariableCTAsOptions.php:243
+msgid "This value is the picture to show. Default in options or none"
+msgstr ""
+"Este valor es la imagen a mostrar. Predeterminado en opciones o ninguno"
+
+#: classes/class-VariableCTAsOptions.php:247
+msgid ""
+"This value is the picture to show like background <b>in all version except "
+"version-1</b>. Default in options or none"
+msgstr ""
+"Este valor es la imagen que se mostrará como fondo <b> en todas las "
+"versiones excepto en la versión 1 </b>. Predeterminado en opciones o ninguno"
+
+#: classes/class-VariableCTAsOptions.php:251
+msgid ""
+"This value is the phone number to show and ofuscated link. Default in "
+"options or 932 828 064"
+msgstr ""
+"Este valor es el número de teléfono para mostrar y el enlace ofuscado. "
+"Predeterminado en opciones o 932828064"
+
+#: classes/class-VariableCTAsOptions.php:255
+msgid ""
+"This's a valid CSS color value to handle colors details. Default in options "
+"or #942192"
+msgstr ""
+"Este es un valor de color CSS válido para manejar detalles de colores. "
+"Predeterminado en opciones o # 942192"
+
+#: classes/class-VariableCTAsOptions.php:258
+msgid ""
+"The use is pretty simple. You only have to put <b>[variable_cta version='2' "
+"avatar='https://domain.es/image.png' background='https://domain.es/image."
+"png' phone='555636363' color='#942192']</b> where you want to show the CTA."
+msgstr ""
+"El uso es bastante sencillo. Solo tienes que poner <b> [variable_cta "
+"version = '2' avatar = 'https: //domain.es/image.png' background = "
+"'https: //domain.es/image.png' phone = '555636363' color = '# 942192'] </b> "
+"donde desea mostrar la CTA."
+
+#: classes/class-VariableCTAsOptions.php:259
+msgid ""
+"If you only want to show default values you have to put <b>[variable_cta]</"
+"b> where you want to show the CTA."
+msgstr ""
+"Si solo desea mostrar valores predeterminados, debe poner <b> "
+"[variable_cta] </b> donde desea mostrar el CTA."
+
+#: classes/class-VariableCTAsOptions.php:260
+msgid ""
+"<b>Note the singles quotes</b>. This is because WordPress change "
+"automatically double quotes to angular ones (« ») in spanish language.​"
+msgstr ""
+"<b>Tenga en cuenta las comillas simples</b>. Esto se debe a que WordPress "
+"cambia automáticamente las comillas dobles a angulares («») en español."
