@@ -23,12 +23,12 @@ declare(strict_types=1);
 			<h5 class="pure-text-12 pure-text-bolder pure-spacer">Particular <span class="pure-text-accent-color">|</span> 98% acierto</h5>
 			<div>
 				<button class="pure-button pure-button--secondary round" onclick="dataLayer.push({
-						'event': 'variableCTAs',
+						'event': 'event',
 						'eventCat': 'interaction',
 						'eventAct': 'call',
 						'eventVersion': 'call-version-<?php echo $a['version']; ?>',
-						'eventAvatar': '<?php echo $a['avatar']; ?>',
-						'eventBackground': '<?php echo $a['background']; ?>',
+						'eventAvatar': '<?php echo basename($a['avatar']); ?>',
+						'eventBackground': '<?php echo basename($a['background']); ?>',
 						'eventPhone': '<?php echo $a['phone']; ?>',
 						'eventColor': '<?php echo $a['color']; ?>'
 					});
